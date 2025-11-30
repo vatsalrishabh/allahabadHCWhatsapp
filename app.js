@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
 const hitAllahabadHC = require('./services/externalhitsalHC');
+require('dotenv').config();
+const connectDB = require('./config/db');
 
 const port = 3000;
 
 
 
 
+connectDB();
 
 app.get('/health', async (req, res) => {
     try {
